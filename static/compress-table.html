@@ -10,74 +10,74 @@
     <script type="text/javascript" src="js/lzw.js"></script>
 </head>
 <body>
-    <h1 class="text-center">LZW Compressing Table</h1>
-    <br/>
-    <div class="container">
-        <div id="searchUser" class="card">
-            <div class="card-header">
-                Search a Github user
-            </div>
-            <div class="card-body">
-                <form id="lzwCompressForm">
-                    <div class="form-group">
-                        <label for="lzwCharStream">
-                            Char stream to be compressed
-                        </label>
-                        <input id="lzwCharStream" class="form-control"
-                               value="ABCCCAAABCDDDCAACDDDDCAACDDBDDBABDDDDCAAACDDCBCAAABBBBEFAAAAAAFA"
-                               aria-describedby="searchHelp" placeholder="Char stream to be compressed" />
-                        <small id="searchHelp" class="form-text text-muted">
-                            The char stream entered will be used to generate the LZW compress table
-                        </small>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Compress</button>
-                </form>
-            </div>
+<h1 class="text-center">LZW Compressing Table</h1>
+<br/>
+<div class="container">
+    <div id="searchUser" class="card">
+        <div class="card-header">
+            Generate the LZW compress table
         </div>
-        <br/>
-        <table id="lzwCompressTable" class="table table-striped" style="display: none">
-            <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">P</th>
-                <th scope="col">C</th>
-                <th scope="col">Dictionary</th>
-                <th scope="col">Output</th>
-            </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-        <br/>
-        <table id="lzwCompressResultTable" class="table table-striped" style="display: none">
-            <tbody>
-                <tr>
-                    <th scope="row">Root Dictionary</th>
-                    <td id="lzwRootDict">dictionary</td>
-                </tr>
-                <tr>
-                    <th scope="row">CodeStream</th>
-                    <td id="lzwCodeStream">dictionary</td>
-                </tr>
-                <tr>
-                    <th scope="row">Efficiency</th>
-                    <td id="lzwCompressEfficiency">dictionary</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="card-body">
+            <form id="lzwCompressForm">
+                <div class="form-group">
+                    <label for="lzwCharStream">
+                        Image char stream to be compressed
+                    </label>
+                    <input id="lzwCharStream" class="form-control"
+                           value="ABCCCAAABCDDDCAACDDDDCAACDDBDDBABDDDDCAAACDDCBCAAABBBBEFAAAAAAFA"
+                           aria-describedby="searchHelp" placeholder="Char stream to be compressed" />
+                    <small id="searchHelp" class="form-text text-muted">
+                        The image char stream entered will be used to generate the LZW compress table
+                    </small>
+                </div>
+                <button type="submit" class="btn btn-primary">Compress</button>
+            </form>
+        </div>
     </div>
+    <br/>
+    <table id="lzwCompressTable" class="table table-striped" style="display: none">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">P</th>
+            <th scope="col">C</th>
+            <th scope="col">Dictionary</th>
+            <th scope="col">Output</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <br/>
+    <table id="lzwCompressResultTable" class="table table-striped" style="display: none">
+        <tbody>
+        <tr>
+            <th scope="row">Root Dictionary</th>
+            <td id="lzwRootDict">dictionary</td>
+        </tr>
+        <tr>
+            <th scope="row">CodeStream</th>
+            <td id="lzwCodeStream">dictionary</td>
+        </tr>
+        <tr>
+            <th scope="row">Efficiency</th>
+            <td id="lzwCompressEfficiency">dictionary</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 
-    <script type="text/javascript">
-        let lzwEncoder = new LzwEncoder();
-        $('#lzwCompressForm')
-            .submit(e => {
-                e.preventDefault();
-                e.stopPropagation();
+<script type="text/javascript">
+    let lzwEncoder = new LzwEncoder();
+    $('#lzwCompressForm')
+        .submit(e => {
+            e.preventDefault();
+            e.stopPropagation();
 
-                lzwEncoder.encode($('#lzwCharStream').val());
-                $('#lzwCompressTable').show();
-                $('#lzwCompressResultTable').show();
-            });
-    </script>
+            lzwEncoder.encode($('#lzwCharStream').val());
+            $('#lzwCompressTable').show();
+            $('#lzwCompressResultTable').show();
+        });
+</script>
 </body>
 </html>
