@@ -15,19 +15,19 @@
     <div class="container">
         <div id="searchUser" class="card">
             <div class="card-header">
-                Search a Github user
+                Generate the LZW compress table
             </div>
             <div class="card-body">
                 <form id="lzwCompressForm">
                     <div class="form-group">
                         <label for="lzwCharStream">
-                            Char stream to be compressed
+                            Image char stream to be compressed
                         </label>
                         <input id="lzwCharStream" class="form-control"
                                value="ABCCCAAABCDDDCAACDDDDCAACDDBDDBABDDDDCAAACDDCBCAAABBBBEFAAAAAAFA"
                                aria-describedby="searchHelp" placeholder="Char stream to be compressed" />
                         <small id="searchHelp" class="form-text text-muted">
-                            The char stream entered will be used to generate the LZW compress table
+                            The image char stream entered will be used to generate the LZW compress table
                         </small>
                     </div>
                     <button type="submit" class="btn btn-primary">Compress</button>
