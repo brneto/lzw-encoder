@@ -1,1 +1,1 @@
-# lzw-encoder
+# LZW Encoder Project
