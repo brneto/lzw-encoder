@@ -1,1 +1,1 @@
-# LZW Encoder Project
+# LZW Encoder Project Github Pages
