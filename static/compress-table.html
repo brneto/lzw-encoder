@@ -74,7 +74,7 @@
             e.preventDefault();
             e.stopPropagation();
 
-             $('#lzwCompressTable > tbody').html('');
+            $('#lzwCompressTable > tbody').html('');
             lzwEncoder.encode($('#lzwCharStream').val());
             $('#lzwCompressTable').show();
             $('#lzwCompressResultTable').show();
